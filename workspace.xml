@@ -1,0 +1,56 @@
+<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
+  <block type="train" id="7?kEPM63ljT3W47A99|g" deletable="false" movable="false" editable="false" x="38" y="13">
+    <value name="model">
+      <block type="model" id="97BG16j(F]p(dGwMtlSO" deletable="false" movable="false" editable="false">
+        <value name="model">
+          <block type="text" id="$![V^*(PR3eW!~47j/]F">
+            <field name="TEXT">SVR</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <value name="data">
+      <block type="load_data" id="ok%}UJVHV.]ixQ~+b^n0" deletable="false" movable="false" editable="false">
+        <value name="data">
+          <block type="text" id="n6)nvb@Pxmjn%d#EF*K#">
+            <field name="TEXT">energy_efficiency_data.csv</field>
+          </block>
+        </value>
+        <value name="target">
+          <block type="text" id="b3Brb5](_Z#Es[Zg#DAg">
+            <field name="TEXT">Heating_Load</field>
+          </block>
+        </value>
+        <value name="cut">
+          <block type="text" id=",y#({+.wdQ(,$}#-|iV#">
+            <field name="TEXT">Cooling_Load</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <value name="explainers">
+      <block type="explainers" id="?4L`frD[6vMEs{Gwgw:V">
+        <value name="explainers">
+          <block type="lists_create_with" id="kd[9^U5PPyMxz#ug+Sw0">
+            <mutation items="3"></mutation>
+            <value name="ADD0">
+              <block type="text" id="P818(0%vgj/%qgM=O2pm">
+                <field name="TEXT">shap</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="ULcPB_y($VL?ri#w_xVD">
+                <field name="TEXT">lime</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text" id="}HfE~Sn@fiX,[yHVyFO!">
+                <field name="TEXT">mace</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>

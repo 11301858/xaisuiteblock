@@ -3,7 +3,7 @@ Blockly.Python['train'] = function(block) {
   var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
   var value_explainers = Blockly.Python.valueToCode(block, 'explainers', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = 'train_and_explainModel(' + value_model + ', ' + value_data + ', ' + value_explainers + ')';
   return code;
 };
 

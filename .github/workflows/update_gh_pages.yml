@@ -30,13 +30,6 @@ jobs:
       with:
         node-version: 16
 
-    - name: NPM install
-      # Use CI so that we don't update dependencies in this step.
-      # TODO(#1511): remove --force flag from installing examples
-      # Until then, don't block updating just because some dependencies are out of date.
-      run: |
-        npm ci
-        (npm ci --force)
     - name: Deploy to GH Pages
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -24,7 +24,7 @@ const ws = Blockly.inject(blocklyDiv, {
 // generated code from the workspace, and evals the code.
 // In a real application, you probably shouldn't use `eval`.
 const runCode = () => {
-  const code = javascriptGenerator.workspaceToCode(ws);
+  const code = pythonGenerator.workspaceToCode(ws);
   codeDiv.innerText = code;
 
   outputDiv.innerHTML = '';

@@ -29,6 +29,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
+    - name: NPM install
+      # Use CI so that we don't update dependencies in this step.
+      # TODO(#1511): remove --force flag from installing examples
+      # Until then, don't block updating just because some dependencies are out of date.
+      run: |
+        npm cache clean --force
+        npm install --force
 
     - name: Deploy to GH Pages
       env:

@@ -104,4 +104,4 @@ const explainers = {
 // This does not register their definitions with Blockly.
 // This file has no side effects!
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray(
-    [addText]);
+    [train, load_data, compare_explanations, model, explainers]);

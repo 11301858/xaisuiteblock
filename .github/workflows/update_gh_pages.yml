@@ -36,7 +36,7 @@ jobs:
       # Until then, don't block updating just because some dependencies are out of date.
       run: |
         npm ci
-        (cd examples && npm ci --force)
+        (cd src && npm ci --force)
     - name: Deploy to GH Pages
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

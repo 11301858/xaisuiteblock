@@ -15,12 +15,12 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
       with:
-        ref: main
+        ref: master
 
     - name: Setup Node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
         node-version: 16
 
@@ -29,8 +29,7 @@ jobs:
       # TODO(#1511): remove --force flag from installing examples
       # Until then, don't block updating just because some dependencies are out of date.
       run: |
-        npm ci
-        (cd src && npm ci --force)
+        npm ci --force
     - name: Deploy to GH Pages
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

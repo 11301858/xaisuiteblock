@@ -2,13 +2,15 @@
 
 name: Build
 
-on: [commit]
+on:
+  push: 
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
-  build:f
+  build:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     strategy:

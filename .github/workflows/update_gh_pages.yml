@@ -29,9 +29,7 @@ jobs:
       # TODO(#1511): remove --force flag from installing examples
       # Until then, don't block updating just because some dependencies are out of date.
       run: |
-        npm cache clean --force
-        npm ci --force
-        npm run
+        npm ci
     - name: Deploy to GH Pages
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -39,4 +37,3 @@ jobs:
       # so you can use this workflow from a fork to update your personal gh-pages
       run: |
         git remote set-url origin https://git:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npm run-script deploy

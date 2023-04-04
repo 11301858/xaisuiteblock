@@ -36,7 +36,5 @@ jobs:
       # deploys to the current repo,
       # so you can use this workflow from a fork to update your personal gh-pages
       run: |
-        npm run build
         git remote set-url origin https://git:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npm install gh-pages --save-dev --global
-        gh-pages -d build
+        npm run deploy

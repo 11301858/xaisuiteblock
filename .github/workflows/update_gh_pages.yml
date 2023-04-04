@@ -39,4 +39,4 @@ jobs:
       # so you can use this workflow from a fork to update your personal gh-pages
       run: |
         git remote set-url origin https://git:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npm run deploy
+        npm run-script deploy

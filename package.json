@@ -8,7 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack serve --open --mode development"
-    "predeploy": "lerna run predeploy",
   },
   "keywords": [
     "blockly"

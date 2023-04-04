@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "start": "webpack serve --open --mode development",
     "predeploy": "npm run build",
-    "deploy": "npm install gh-pages --save-dev && gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "blockly"
@@ -19,6 +19,7 @@
   "devDependencies": {
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
+    "gh-pages": "^5.0.0",
     "source-map-loader": "^4.0.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",

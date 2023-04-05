@@ -1,6 +1,6 @@
 # XAISuiteBlock
 
-The block-based coding library for XAISuite: github.com/11301858/XAISuite. Powered by Blockly and Node.js.
+The block-based coding library for XAISuite: github.com/11301858/XAISuite . Powered by Blockly and Node.js.
 
 Simply navigate to the following link:
 

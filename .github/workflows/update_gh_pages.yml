@@ -38,4 +38,4 @@ jobs:
       run: |
         git remote set-url origin https://git:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         
-        npm run-script deploy -- -m "Deploy React app to GitHub Pages"
+        npm run-script deploy xaisuiteblock -m "Deploy React app to GitHub Pages"

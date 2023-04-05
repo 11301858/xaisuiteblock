@@ -29,7 +29,6 @@ jobs:
       # TODO(#1511): remove --force flag from installing examples
       # Until then, don't block updating just because some dependencies are out of date.
       run: |
-        npm install
         npm ci
         npm install gh-pages --save-dev
     - name: Deploy to GH Pages

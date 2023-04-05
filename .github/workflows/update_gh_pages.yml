@@ -38,4 +38,4 @@ jobs:
       # so you can use this workflow from a fork to update your personal gh-pages
       run: |
         git remote set-url origin https://git:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npm run-script deploy xaisuiteblock -m "Deploy Node.js app to GitHub Pages"
+        npm run-script deploy build -m "Deploy Node.js app to GitHub Pages"

@@ -686,15 +686,19 @@ export const toolbox = {
       'contents': [
        {
           'kind': 'block',
-          'type': 'train',
+          'type': 'trainer',
         },
         {
           'kind': 'block',
-          'type': 'load_data',
+          'type': 'data_loader',
         },
         {
           'kind': 'block',
-          'type': 'compare_explanations',
+          'type': 'data_processor',
+        },
+        {
+          'kind': 'block',
+          'type': 'insightGenerator',
         },
       ],
     },

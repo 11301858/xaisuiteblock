@@ -686,15 +686,43 @@ export const toolbox = {
       'contents': [
        {
           'kind': 'block',
-          'type': 'train',
+          'type': 'dataloader',
         },
         {
           'kind': 'block',
-          'type': 'loadData',
+          'type': 'data_loader_simple',
         },
         {
           'kind': 'block',
-          'type': 'analyzer',
+          'type': 'dataprocessor',
+        },
+        {
+          'kind': 'block',
+          'type': 'auto',
+        },
+        {
+          'kind': 'block',
+          'type': 'none',
+        },
+        {
+          'kind': 'block',
+          'type': 'modeltrainer',
+        },
+        {
+          'kind': 'block',
+          'type': 'getlocalexplanations',
+        },
+        {
+          'kind': 'block',
+          'type': 'getsummaryexplanations',
+        },
+         {
+          'kind': 'block',
+          'type': 'insight_generator',
+        },
+        {
+          'kind': 'block',
+          'type': 'calculateexplainersimilarity',
         },
       ],
     },

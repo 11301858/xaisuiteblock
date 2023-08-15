@@ -1,5 +1,3 @@
-
-
 python.pythonGenerator.forBlock['dataloader'] = function(block, generator) {
   var value_data = generator.valueToCode(block, 'data', python.Order.ATOMIC);
   var dropdown_sourcedropdown = block.getFieldValue('SourceDropdown');
@@ -59,4 +57,34 @@ python.pythonGenerator.forBlock['modeltrainer'] = function(block, generator) {
 };
 
 python.pythonGenerator.forBlock['getlocalexplanations'] = function(block, generator) {
+  var value_name = generator.valueToCode(block, 'NAME', python.Order.ATOMIC);
+  // TODO: Assemble python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.python.ORDER_NONE];
+};
 
+python.pythonGenerator.forBlock['getsummaryexplanations'] = function(block, generator) {
+  var value_explanations = generator.valueToCode(block, 'explanations', python.Order.ATOMIC);
+  // TODO: Assemble python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.python.ORDER_NONE];
+};
+
+python.pythonGenerator.forBlock['insight_generator'] = function(block, generator) {
+  var value_explanations = generator.valueToCode(block, 'explanations', python.Order.ATOMIC);
+  // TODO: Assemble python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.python.ORDER_NONE];
+};
+
+python.pythonGenerator.forBlock['calculateexplainersimilarity'] = function(block, generator) {
+  var value_insights = generator.valueToCode(block, 'insights', python.Order.ATOMIC);
+  var value_explainer1 = generator.valueToCode(block, 'explainer1', python.Order.ATOMIC);
+  var value_explainer2 = generator.valueToCode(block, 'explainer2', python.Order.ATOMIC);
+  // TODO: Assemble python into code variable.
+  var code = '...\n';
+  return code;
+};

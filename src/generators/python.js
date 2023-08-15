@@ -1,48 +1,62 @@
-import {pythonGenerator} from 'blockly/python';
 
-// Export all the code generators for our custom blocks,
-// but don't register them with Blockly yet.
-// This file has no side effects!
-export const generator = Object.create(null);
 
-generator['train'] = function(block) {
-  var value_model = pythonGenerator.valueToCode(block, 'model', pythonGenerator.ORDER_ATOMIC);
-  var value_data = pythonGenerator.valueToCode(block, 'data', pythonGenerator.ORDER_ATOMIC);
-  var value_explainers = pythonGenerator.valueToCode(block, 'explainers', pythonGenerator.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'from xaisuite import* \ntrain_and_explainModel(' + value_model + ', ' + value_data + ', ' + value_explainers + ')';
-  return code;
-};
-
-generator['load_data'] = function(block) {
-  var value_data = pythonGenerator.valueToCode(block, 'data', pythonGenerator.ORDER_ATOMIC);
-  var value_target = pythonGenerator.valueToCode(block, 'target', pythonGenerator.ORDER_ATOMIC);
-  var value_cut = pythonGenerator.valueToCode(block, 'cut', pythonGenerator.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'load_data_CSV(' + value_data + ',' + value_target + ',' + value_cut + ')';
+python.pythonGenerator.forBlock['dataloader'] = function(block, generator) {
+  var value_data = generator.valueToCode(block, 'data', python.Order.ATOMIC);
+  var dropdown_sourcedropdown = block.getFieldValue('SourceDropdown');
+  var dropdown_typedropdown = block.getFieldValue('TypeDropdown');
+  var value_variablenames = generator.valueToCode(block, 'VariableNames', python.Order.ATOMIC);
+  var value_target = generator.valueToCode(block, 'Target', python.Order.ATOMIC);
+  var value_cut = generator.valueToCode(block, 'Cut', python.Order.ATOMIC);
+  var value_categorical = generator.valueToCode(block, 'Categorical', python.Order.ATOMIC);
+  // TODO: Assemble python into code variable.
+  var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, pythonGenerator.ORDER_NONE];
+  return [code, Blockly.python.ORDER_NONE];
 };
 
-generator['compare_explanations'] = function(block) {
-  var value_filenames = pythonGenerator.valueToCode(block, 'filenames', pythonGenerator.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'from xaisuite import* \ncompare_explanations(' + value_filenames + ')';
-  return code;
-};
-
-generator['model'] = function(block) {
-  var value_model = pythonGenerator.valueToCode(block, 'model', pythonGenerator.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'return ' + value_model ;
+python.pythonGenerator.forBlock['data_loader_simple'] = function(block, generator) {
+  var value_data = generator.valueToCode(block, 'data', python.Order.ATOMIC);
+  // TODO: Assemble python into code variable.
+  var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, pythonGenerator.ORDER_NONE];
+  return [code, Blockly.python.ORDER_NONE];
 };
 
-generator['explainers'] = function(block) {
-  var value_explainers = pythonGenerator.valueToCode(block, 'explainers', pythonGenerator.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'return ' + value_explainers;
+python.pythonGenerator.forBlock['dataprocessor'] = function(block, generator) {
+  var value_dataloader = generator.valueToCode(block, 'dataLoader', python.Order.ATOMIC);
+  var number_test_size = block.getFieldValue('test_size');
+  var text_transform = block.getFieldValue('transform');
+  // TODO: Assemble python into code variable.
+  var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, pythonGenerator.ORDER_NONE];
+  return [code, Blockly.python.ORDER_NONE];
 };
+
+python.pythonGenerator.forBlock['auto'] = function(block, generator) {
+  // TODO: Assemble python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.python.ORDER_NONE];
+};
+
+python.pythonGenerator.forBlock['none'] = function(block, generator) {
+  // TODO: Assemble python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.python.ORDER_NONE];
+};
+
+python.pythonGenerator.forBlock['modeltrainer'] = function(block, generator) {
+  var value_model = generator.valueToCode(block, 'model', python.Order.ATOMIC);
+  var value_withdata = generator.valueToCode(block, 'withData', python.Order.ATOMIC);
+  var dropdown_tasktype = block.getFieldValue('taskType');
+  var dropdown_task = block.getFieldValue('task');
+  var value_explainers = generator.valueToCode(block, 'explainers', python.Order.ATOMIC);
+  // TODO: Assemble python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.python.ORDER_NONE];
+};
+
+python.pythonGenerator.forBlock['getlocalexplanations'] = function(block, generator) {
+

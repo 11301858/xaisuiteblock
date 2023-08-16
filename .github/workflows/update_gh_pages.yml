@@ -27,8 +27,6 @@ jobs:
     - name: NPM install
      
       run: |
-        rm -rf node_modules package-lock.json
-        npm cache clean --force
         npm ci
         npm install gh-pages --save-dev
     - name: Deploy to GH Pages

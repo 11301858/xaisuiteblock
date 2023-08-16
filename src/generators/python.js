@@ -92,6 +92,6 @@ generator['calculateexplainersimilarity'] = function(block) {
   var value_explainer1 = pythonGenerator.valueToCode(block, 'explainer1', pythonGenerator.ORDER_ATOMIC);
   var value_explainer2 = pythonGenerator.valueToCode(block, 'explainer2', pythonGenerator.ORDER_ATOMIC);
   // TODO: Assemble python into code variable.
-  var code = (value_insights + '.calculateExplainerSimilarity(' + value_explainer1 + ', ' + value_explainer2 + ')');
-  return [code, pythonGenerator.ORDER_ATOMIC];
+  var code = ('' + value_insights + '.calculateExplainerSimilarity(' + value_explainer1 + ', ' + value_explainer2 + ')');
+  return code;
 };

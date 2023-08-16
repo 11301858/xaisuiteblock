@@ -6,6 +6,7 @@ import {pythonGenerator} from 'blockly/python';
 export const generator = Object.create(null);
 
 generator['dataloader'] = function(block) {
+  pythonGenerator.definitions_['import_xaisuite_dataloader'] = 'from xaisuite.dataHandler import DataLoader';
   var value_data = pythonGenerator.valueToCode(block, 'data', pythonGenerator.ORDER_ATOMIC);
   var dropdown_sourcedropdown = block.getFieldValue('SourceDropdown');
   var dropdown_typedropdown = block.getFieldValue('TypeDropdown');
@@ -20,6 +21,7 @@ generator['dataloader'] = function(block) {
 };
 
 generator['data_loader_simple'] = function(block) {
+  pythonGenerator.definitions_['import_xaisuite_dataloader'] = 'from xaisuite.dataHandler import DataLoader';
   var value_data = pythonGenerator.valueToCode(block, 'data', pythonGenerator.ORDER_ATOMIC);
   // TODO: Assemble python into code variable.
   var code = ('DataLoader(data = ' + value_data + ')');
@@ -28,6 +30,7 @@ generator['data_loader_simple'] = function(block) {
 };
 
 generator['dataprocessor'] = function(block) {
+   pythonGenerator.definitions_['import_xaisuite_dataprocessor'] = 'from xaisuite.dataHandler import DataProcessor';
   var value_dataloader = pythonGenerator.valueToCode(block, 'dataLoader', pythonGenerator.ORDER_ATOMIC);
   var number_test_size = block.getFieldValue('test_size');
   var text_transform = block.getFieldValue('transform');
@@ -52,6 +55,7 @@ generator['none'] = function(block) {
 };
 
 generator['modeltrainer'] = function(block) {
+  pythonGenerator.definitions_['import_xaisuite_modeltrainer'] = 'from xaisuite.explainableModel import ModelTrainer';
   var value_model = pythonGenerator.valueToCode(block, 'model', pythonGenerator.ORDER_ATOMIC);
   var value_withdata = pythonGenerator.valueToCode(block, 'withData', pythonGenerator.ORDER_ATOMIC);
   var dropdown_tasktype = block.getFieldValue('taskType');
@@ -64,6 +68,7 @@ generator['modeltrainer'] = function(block) {
 };
 
 generator['getlocalexplanations'] = function(block) {
+  pythonGenerator.definitions_['import_xaisuite_modeltrainer'] = 'from xaisuite.explainableModel import ModelTrainer';
   var value_name = pythonGenerator.valueToCode(block, 'NAME', pythonGenerator.ORDER_ATOMIC);
   // TODO: Assemble python into code variable.
   var code = value_name + '.getExplanationsFor([])';
@@ -72,6 +77,7 @@ generator['getlocalexplanations'] = function(block) {
 };
 
 generator['getsummaryexplanations'] = function(block) {
+  pythonGenerator.definitions_['import_xaisuite_modeltrainer'] = 'from xaisuite.explainableModel import ModelTrainer';
   var value_explanations = pythonGenerator.valueToCode(block, 'explanations', pythonGenerator.ORDER_ATOMIC);
   // TODO: Assemble python into code variable.
   var code = value_explanations + '.getSummaryExplanations()';
@@ -80,6 +86,7 @@ generator['getsummaryexplanations'] = function(block) {
 };
 
 generator['insight_generator'] = function(block) {
+  pythonGenerator.definitions_['import_xaisuite_insightgenerator'] = 'from xaisuite.explainableModel import InsightGenerator';
   var value_explanations = pythonGenerator.valueToCode(block, 'explanations', pythonGenerator.ORDER_ATOMIC);
   // TODO: Assemble python into code variable.
   var code = 'InsightGenerator(' + value_explanations + ')';
@@ -88,6 +95,7 @@ generator['insight_generator'] = function(block) {
 };
 
 generator['calculateexplainersimilarity'] = function(block) {
+  pythonGenerator.definitions_['import_xaisuite_insightgenerator'] = 'from xaisuite.explainableModel import InsightGenerator';
   var value_insights = pythonGenerator.valueToCode(block, 'insights', pythonGenerator.ORDER_ATOMIC);
   var value_explainer1 = pythonGenerator.valueToCode(block, 'explainer1', pythonGenerator.ORDER_ATOMIC);
   var value_explainer2 = pythonGenerator.valueToCode(block, 'explainer2', pythonGenerator.ORDER_ATOMIC);

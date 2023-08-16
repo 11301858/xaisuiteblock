@@ -27,8 +27,8 @@ jobs:
     - name: NPM install
      
       run: |
-        npm cache clean --force
-        pwd
+        cd /home/runner/work/xaisuiteblock/xaisuiteblock/
+        ls -l
         npm ci
         npm install gh-pages --save-dev
     - name: Deploy to GH Pages

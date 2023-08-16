@@ -1,3 +1,4 @@
+import * as Blockly from 'blockly';
 python.pythonGenerator.forBlock['dataloader'] = function(block, generator) {
   var value_data = generator.valueToCode(block, 'data', python.Order.ATOMIC);
   var dropdown_sourcedropdown = block.getFieldValue('SourceDropdown');

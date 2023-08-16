@@ -1,6 +1,6 @@
 import * as Blockly from 'blockly/core';
 
-const blocks = [{
+const blocksjson = [{
   "type": "dataloader",
   "message0": "Load data %1 Source:  %2 %3 Type: %4 %5 Variable Names: %6 Target Names %7 Cut %8 Categorical %9",
   "args0": [
@@ -328,4 +328,4 @@ const blocks = [{
 // This does not register their definitions with Blockly.
 // This file has no side effects!
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray(
-    blocks);
+    blocksjson);

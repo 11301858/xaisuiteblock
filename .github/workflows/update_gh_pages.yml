@@ -27,6 +27,7 @@ jobs:
     - name: NPM install
      
       run: |
+        npm ci
         npm install gh-pages --save-dev
     - name: Deploy to GH Pages
       env:

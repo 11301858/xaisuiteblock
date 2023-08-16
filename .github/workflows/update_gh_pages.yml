@@ -28,6 +28,7 @@ jobs:
      
       run: |
         npm cache clean --force
+        pwd
         npm ci
         npm install gh-pages --save-dev
     - name: Deploy to GH Pages
